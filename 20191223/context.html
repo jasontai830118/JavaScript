@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+    <button id="btn">click</button>
+    <script>
+        let rect = document.querySelector('#rect');
+
+
+        function f1() {
+            console.log(this); // context
+            console.log(self);
+            console.log('----');
+            console.log(f);
+        }
+
+        const f = (function () {
+            let n = 5;
+            return function (a) {
+                if (n) {
+                    n--;
+                    console.log(n);
+                    return n * a;
+                } else {
+                    return '禁止再呼叫';
+                }
+            };
+        })();
+
+
+        f1();
+
+        document.querySelector('#btn').onclick = f1;
+    </script>
+</body>
+
+</html>

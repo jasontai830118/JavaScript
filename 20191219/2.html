@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #003686;
+        }
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #d9f00d;
+            color: rgb(0, 0, 0);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            left: 100px;
+            top: 100px;
+            display: inline-block;
+            /* opacity: 0; */
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+<!--    <div class="ball">8</div>-->
+</div>
+<button onclick="showBall()">show</button>
+<script>
+    let rect = document.querySelector('#rect');
+    let b, i, k, n;
+    // const str = '鼠年行大運高雄發大財';
+    for(n=1,k=0; k<6; k++){
+    
+    for(i=0; i<8; i++,n++){
+        b = document.createElement('div');
+        b.className = 'ball';
+        b.innerHTML = n;
+        n++;
+        b.style.left = 50 + i *70 +'px';
+        b.style.top = 50 + k * 70 + 'px';
+        b.style.backgroundColor = `rgb(${100+i*15},92,180)`;
+        b.style.transition =  0.5*i +'s';
+        rect.appendChild(b);
+        }
+    }   
+
+    // function showBall(){
+    //     let balls = document.querySelectorAll('.ball');
+        
+    // for(i=0; i<balls.length; i++){
+    //     balls[i].style.opacity = 1;
+    //     balls[i].style.top = '200px';
+    // }
+    // }
+</script>
+</body>
+</html>

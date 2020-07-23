@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #639df3;
+        } */
+
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #d9f00d;
+            color: rgb(0, 0, 0);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            left: 100px;
+            top: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form0" onsubmit="return false;">
+        <input type="number" name="x"><br>
+        <input type="number" name="y">
+        <button type="button" onclick="check()">click</button>
+    </form>
+    <div id="rect">
+        <!--    <div class="ball">8</div>-->
+    </div>
+    <script>
+        let rect = document.querySelector('#rect');
+        let b, i, j, x, y;
+        function check() {
+            let x = document.form0.x.value * 1;
+            let y = document.form0.y.value * 1;
+            console.log(x);
+            console.log(y)
+        };
+        // for (i = 0; i < 17; i++) {
+        //     b = document.createElement('div');
+        //     b.className = 'ball';
+        //     b.innerHTML = i + 1;
+        //     b.style.left = 50 + i % 8 * 70 + 'px';
+        //     b.style.top = 50 + parseInt(i / 8) * 70 + 'px';
+        //     b.style.backgroundColor = `hsl(${100 + i * 25},100%,50%)`;
+        //     rect.appendChild(b);
+        // }
+    </script>
+</body>
+
+</html>

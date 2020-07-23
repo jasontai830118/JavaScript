@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="rect">
+    </div>
+
+    <script>
+        // ES6 destructuring
+        let rect = document.querySelector('#rect');
+
+        function showLine(str) {
+            rect.innerHTML += str + '<br>';
+            // console.log(str);
+        }
+
+        showLine([3, 4, 5]);
+
+        showLine(abc);
+        var abc = 100;
+
+
+        // rect.innerHTML += abc + '<br>';
+    // showLine = console.log;
+    //
+    // showLine([3,4,5]);
+    </script>
+</body>
+
+</html>

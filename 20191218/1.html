@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="score" onchange="doCal()" onkeyup="doCal()" min="0" max="100">
+    <div id="info"></div>
+    <script>
+    let score = document.querySelector('#score');
+    let info = document.querySelector('#info');
+
+    function doCal(){
+        let s = score.value * 1 ;
+        let g = '';
+        
+        // if (s >= 90) {
+        //     g = 'A';
+        // }   else if (s >= 80) {
+        //     g = 'B';
+        // }   else if (s >= 70) {
+        //     g = 'C';
+        // }
+        //     else if (s >= 60) {
+        //     g = 'D';
+        // }   else {
+        //     g = 'E';
+        // }
+        s = parseInt(s/10)
+        
+        switch(s){
+            case 10:
+                g = 'S';
+                break;
+            case 9:
+                g = 'A';
+                break;
+            case 8:
+                g = 'B';
+                break;
+            case 7:
+                g = 'C';
+                break;
+            case 6:
+                g = 'D';
+                break;
+            case 5:
+                g = 'E';
+                break;
+            case 4:
+                g = 'F';
+                break;            
+            case 3:
+                g = 'G';
+                break;
+            case 2:
+                g = 'H';
+                break;
+            case 1:
+                g = 'I';
+                break;
+            default:
+                g = 'X';                
+        }
+
+        info.innerHTML = g;
+    };
+    </script>
+</body>
+</html>

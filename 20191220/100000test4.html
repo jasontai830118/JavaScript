@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="prime"></div>
+    <div id="a"></div>
+    <script>
+        let prime = document.querySelector('#prime');
+        let ar = [];
+        let a = document.querySelector('#a');
+        let b;
+        for (i = 2; i < 100; i++) {
+            if (i % 2 === 0) {
+                // ar.push(i);
+                continue;
+            } else {
+                ar.push(i)
+            }
+        }
+        prime.innerHTML += JSON.stringify(ar) + '<br>';
+        // console.log(ar.length)
+        a.innerHTML = JSON.stringify(ar.length)
+        // let v = ar.length
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+    <script>
+        let rect = document.querySelector('#rect')
+        if (true) {
+            var b_var = 99;
+            let b_let = 99;
+
+            function showLine(str) {
+                rect.innerHTML += str + '<br>';
+            }
+
+            var a = 100;
+
+            function func() {
+                var a = 10;
+                showLine('inner a:' + a);
+            }
+
+            func();
+            showLine('outer a:' + a);
+            showLine('b_var:' + b_var);
+            showLine('b_let:' + b_let); 
+    </script>
+
+</body>
+
+</html>

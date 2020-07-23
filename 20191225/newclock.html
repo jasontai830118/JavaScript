@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #c7fff8;
+            border: 1px solid black;
+            border-radius: 50%;
+
+        }
+
+        .hand {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+
+        .hand-sec {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            /*background-color: #ff1916;*/
+            background-size: cover;
+            background-image: url(img/mario.gif);
+            left: -50px;
+            top: -250px;
+        }
+
+        .hand-min {
+            position: absolute;
+            width: 12px;
+            height: 180px;
+            background-color: #0f10ff;
+            border-radius: 6px;
+
+            left: -6px;
+            top: -174px;
+        }
+
+        .hand-hr {
+            position: absolute;
+            width: 20px;
+            height: 120px;
+            background-color: #10770a;
+            border-radius: 10px;
+
+            left: -10px;
+            top: -110px;
+        }
+
+        .scale-container {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+
+        .sc1 {
+            position: absolute;
+        }
+
+        .sc2 {
+            position: absolute;
+            width: 1px;
+            height: 10px;
+            background-color: gray;
+            left: -.5px;
+            top: -300px;
+        }
+
+        .sc2-5min {
+            width: 2px;
+            height: 15px;
+            background-color: #5a5a5a;
+            left: -1px;
+        }
+
+        .ball {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #0aff99;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            left: 50px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div id="rect"></div>
+        <div class="scale-container">
+        </div>
+        <div class="hand">
+            <div class="hand-hr"></div>
+        </div>
+        <div class="hand">
+            <div class="hand-min"></div>
+        </div>
+        <div class="hand">
+            <div class="hand-sec"></div>
+        </div>
+    </div>
+
+    <script>
+        const hands = document.querySelectorAll('.hand');
+        const sc = document.querySelector('.scale-container');
+        let el;
+
+
+
+        for (let i = 0; i < 60; i++) {
+            el = document.createElement('div');
+            el.className = 'sc1';
+            if (i % 5 === 0) {
+                el.innerHTML = `<div class="sc2 sc2-5min"></div>`;
+            } else {
+                el.innerHTML = `<div class="sc2"></div>`;
+            }
+            el.style.transform = `rotate(${i * 6}deg)`;
+            sc.appendChild(el);
+        }
+
+        const runClock = () => {
+            const now = new Date;
+            const ms = now.getMilliseconds();
+            const s = now.getSeconds();
+            const m = now.getMinutes();
+            const h = now.getHours();
+            hands[0].style.transform = `rotate(${h * 30 + m * .5}deg)`;
+            hands[1].style.transform = `rotate(${m * 6}deg)`;
+            hands[2].style.transform = `rotate(${s * 6 + 0.006 * ms}deg)`;
+            setTimeout(runClock, 30)
+        };
+
+        runClock();
+
+        const ballNum = 12;
+        const angUnit = Math.PI * 2 / ballNum;
+        let i, b, x, y;
+        let rect = document.querySelector('#rect');
+
+        for (i = 0; i < ballNum; i++) {
+            b = document.createElement('div');
+            b.className = 'ball';
+            b.innerHTML = i + 1;
+            x = 300 - 15 + Math.cos(angUnit * i - Math.PI / 3) * 250;
+            y = 300 - 15 + Math.sin(angUnit * i - Math.PI / 3) * 250;
+            b.style.left = x + 'px';
+            b.style.top = y + 'px';
+            rect.appendChild(b);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

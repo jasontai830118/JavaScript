@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rect">
+
+    </div>
+    <script>
+    let rect= document.querySelector('#rect');
+    let s;
+    const person ={
+        age:'18',
+        name:'jack',
+        gender: 'male',
+        };
+    const   boy= {
+            name: 'david',
+            age: 5,
+            gender: 'male',
+        }
+    const   girl= {
+            name: 'flora',
+            age: 3,
+            gender: 'female',
+        }
+    for(s in person) {
+        rect.innerHTML += `key: ${s}, value: ${person[s]} <br>`;
+    }
+    for(s in boy) {
+        rect.innerHTML += `key: ${s}, value: ${boy[s]} <br>`;
+    }
+    for(s in girl) {
+        rect.innerHTML += `key: ${s}, value: ${girl[s]} <br>`;
+    }
+    </script>
+</body>
+</html>

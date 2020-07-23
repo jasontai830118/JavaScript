@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="rect">
+    </div>
+
+    <script>
+        // ES6 destructuring
+        let rect = document.querySelector('#rect');
+
+        function showLine(str) {
+            // TODO: 1. Object, Array -> json
+            rect.innerHTML += str + '<br>';
+        }
+
+        function func(ar) {
+            ar.push('abc');
+        }
+
+        const bc = [5, 6, 7];
+        func(bc);
+        showLine(bc);
+    // showLine(ar);
+
+    // TODO: 2. function shuffle(ar){ 回傳亂數排序的陣列 }
+    // TODO: 不要影響到原本的陣列內容
+        // function shuffle(ar)
+    </script>
+</body>
+
+</html>

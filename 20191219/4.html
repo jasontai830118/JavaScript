@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #639df3;
+        }
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #d9f00d;
+            color: rgb(0, 0, 0);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            left: 100px;
+            top: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+<!--    <div class="ball">8</div>-->
+</div>
+
+<script>
+    let rect = document.querySelector('#rect');
+    let b, i;
+
+    for(i=0; i<17; i++){
+        b = document.createElement('div');
+        b.className = 'ball';
+        b.innerHTML = i+1;
+        b.style.left = 50 + i%8*70 +'px';
+        b.style.top = 50 + parseInt(i/8) * 70 + 'px';
+        b.style.backgroundColor = `hsl(${100+i*25},100%,50%)`;
+        rect.appendChild(b);
+    }
+</script>
+</body>
+</html>
+

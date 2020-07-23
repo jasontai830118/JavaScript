@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+    <script>
+        let rect = document.querySelector('#rect');
+        const ar = ["a", "b", "C", "D", "e", "f", "g", "h", "i"];
+        let i;
+        for (i = 0; i < 20; i++) {
+            rect.innerHTML += i + ',';
+        }
+        rect.innerHTML += '<br>';
+        for (i = 0; i < 20; i++) {
+            if (i === 8) {
+                break;
+            }
+            rect.innerHTML += i + ',';
+        }
+        rect.innerHTML += '<br>';
+
+        for (i = 0; i < 20; i++) {
+            if (i === 8) {
+                continue;
+            }
+            rect.innerHTML += i + ',';
+        }
+        rect.innerHTML += '<br>';
+        for (i in ar) {
+            rect.innerHTML += ar[i] + ',';
+        }
+        rect.innerHTML += '<br>';
+
+        for (i in ar) {
+            if (ar[i] === 'e') {
+                break;
+            }
+            rect.innerHTML += ar[i] + ',';
+        }
+        rect.innerHTML += '<br>';
+
+        for (i in ar) {
+            if (ar[i] === 'e') {
+                continue;
+            }
+            rect.innerHTML += ar[i] + ',';
+        }
+        rect.innerHTML += '<br>';
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+    <div id="rect2"></div>
+    <div id="info"></div>
+    <script>
+        const rect = document.querySelector('#rect');
+        const rect2 = document.querySelector('#rect2');
+        let startTime = new Date().getTime();
+        let info = document.querySelector('#info');
+        let ar = []
+        count: for (var i = 2; i <= 100000; i++) {
+            for (var j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    continue count;
+                }
+            }
+            console.log(i)
+            ar.push(i)
+        }
+        rect.innerHTML = JSON.stringify(ar)
+        rect2.innerHTML = JSON.stringify(ar.length)
+        info.innerHTML += '<br>' + (new Date().getTime() - startTime) + '毫秒<br>';
+    </script>
+</body>
+
+</html>
